@@ -1,0 +1,21 @@
+{
+  "name": "Django Dev Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "editor.formatOnSave": true
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "eamodio.gitlens",
+    "donjayamanne.python-environment-manager"
+  ],
+  "postCreateCommand": "pip install -r /workspace/.devcontainer/requirements.txt",
+  "forwardPorts": [
+    8000
+  ],
+  "remoteUser": "vscode"
+}
