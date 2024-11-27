@@ -1,24 +1,18 @@
 {
   "name": "Django Dev Environment",
-  "dockerComposeFile": [
-    "docker-compose.yml"
-  ],
+  "dockerComposeFile": ["docker-compose.yml"],
   "service": "web",
   "workspaceFolder": "/workspace",
   "settings": {
-    "python.defaultInterpreterPath": "/usr/local/bin/python",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "terminal.integrated.defaultProfile.linux": "bash"
   },
   "extensions": [
     "ms-python.python",
     "ms-python.vscode-pylance",
-    "donjayamanne.python-environment-manager",
-    "ms-azuretools.vscode-docker",
-    "ms-python.debugpy"
+    "eamodio.gitlens",
+    "ms-azuretools.vscode-docker"
   ],
-  "postCreateCommand": "pip install -r requirements.txt && python manage.py migrate",
-  "forwardPorts": [
-    8000
-  ],
-  "remoteUser": "vscode"
+  "postCreateCommand": "",  // No commands run after container creation
+  "postAttachCommand": ""   // Prevent automatic container attachment
 }
