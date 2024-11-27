@@ -4,9 +4,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: .devcontainer/Dockerfile
-    container_name: django-app
-    command: python manage.py runserver 0.0.0.0:8000
+      dockerfile: Dockerfile
     volumes:
       - .:/workspace
     ports:
@@ -17,10 +15,10 @@ services:
       DJANGO_ALLOWED_HOSTS: 0.0.0.0
     depends_on:
       - db
+    command: python manage.py runserver 0.0.0.0:8000
 
   db:
     image: postgres:13
-    container_name: postgresDb
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres

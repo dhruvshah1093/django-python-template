@@ -1,9 +1,10 @@
 {
   "name": "Django Dev Environment",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "workspaceFolder": "/",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "service": "web",
+  "workspaceFolder": "/workspace",
   "settings": {
     "python.defaultInterpreterPath": "/usr/local/bin/python",
     "editor.formatOnSave": true
@@ -11,11 +12,11 @@
   "extensions": [
     "ms-python.python",
     "ms-python.vscode-pylance",
-    "eamodio.gitlens",
-    "donjayamanne.python-environment-manager"
+    "donjayamanne.python-environment-manager",
+    "ms-azuretools.vscode-docker",
+    "ms-python.debugpy"
   ],
-  "postCreateCommand": "", // pip install -r /workspaces/django-python-template/.devcontainer/requirements.txt 
-  "postAttachCommand": "",
+  "postCreateCommand": "pip install -r requirements.txt && python manage.py migrate",
   "forwardPorts": [
     8000
   ],
