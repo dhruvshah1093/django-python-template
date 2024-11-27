@@ -4,14 +4,15 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: .devcontainer/Dockerfile
+    container_name: django-web
     volumes:
       - .:/workspace
     ports:
       - "8000:8000"
     environment:
       DJANGO_DEBUG: 1
-      DJANGO_SECRET_KEY: secret
+      DJANGO_SECRET_KEY: changeme
       DJANGO_ALLOWED_HOSTS: 0.0.0.0
     depends_on:
       - db
@@ -19,6 +20,7 @@ services:
 
   db:
     image: postgres:13
+    container_name: django-db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
