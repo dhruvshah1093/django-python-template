@@ -15,12 +15,12 @@ RUN apt-get update && apt-get install -y \
 RUN pip install debugpy
 
 # Copy the requirements file
-COPY .devcontainer/requirements.txt requirements.txt
+COPY requirements.txt requirements.txt
 
 # Install Python dependencies
 RUN pip install -r requirements.txt
 
-# Expose the application port
+# # Expose the application port
 EXPOSE 8000
 
 # Default command (can be overridden in docker-compose.yml)
