@@ -13,7 +13,7 @@
     "eamodio.gitlens",
     "donjayamanne.python-environment-manager"
   ],
-  "postCreateCommand": "pip install -r /workspace/.devcontainer/requirements.txt",
+  "postCreateCommand": "pip install -r /workspaces/django-python-template/.devcontainer/requirements.txt",
   "forwardPorts": [
     8000
   ],
