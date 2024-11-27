@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: .devcontainer/Dockerfile
+    container_name: django-app
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/workspace
@@ -19,6 +20,7 @@ services:
 
   db:
     image: postgres:13
+    container_name: postgresDb
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres

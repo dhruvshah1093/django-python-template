@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if the container is running
-CONTAINER_NAME="codespace-container"
+CONTAINER_NAME="django-app"
 
 CONTAINER_ID=$(docker ps -q -f "name=$CONTAINER_NAME")
 
