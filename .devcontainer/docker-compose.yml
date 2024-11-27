@@ -16,7 +16,7 @@ services:
       DJANGO_ALLOWED_HOSTS: 0.0.0.0
     depends_on:
       - db
-    command: python manage.py runserver 0.0.0.0:8000
+    command: db python manage.py runserver 0.0.0.0:8000
 
   db:
     image: postgres:13
